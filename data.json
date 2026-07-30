@@ -1,0 +1,200 @@
+{
+  "generated_at": "2026-07-29T23:54:49.374845+00:00",
+  "summary": {
+    "healthy": 4,
+    "degraded": 0,
+    "down": 0,
+    "malware_clean": 4,
+    "malware_threats": 0
+  },
+  "sites": [
+    {
+      "name": "Wealth Excel",
+      "url": "https://www.wealth-excel.com",
+      "checked_at": "2026-07-29T23:54:46.200886+00:00",
+      "status": "healthy",
+      "http_status": 200,
+      "response_time_ms": 1584,
+      "final_url": "https://wealth-excel.com/",
+      "ssl": {
+        "valid": true,
+        "expires": "2026-09-30T21:09:08+00:00",
+        "days_left": 62
+      },
+      "malware": {
+        "status": "clean",
+        "label": "No Malware Detected",
+        "detail": "SSL valid and redirect looks normal. Add GOOGLE_SAFE_BROWSING_API_KEY for official malware scanning.",
+        "threats": [],
+        "redirect_safe": true,
+        "ssl_valid": true,
+        "source": "basic"
+      },
+      "dmarc": {
+        "status": "pass",
+        "label": "DMARC Quarantine",
+        "policy": "quarantine",
+        "record": "v=DMARC1; p=quarantine; sp=quarantine; rua=mailto:info@wealth-excel.com; ruf=mailto:info@wealth-excel.com; aspf=r; adkim=r;",
+        "spf_present": true,
+        "spf_record": "v=spf1 include:_spf.google.com include:wealth-excel.com.spf.auto.dnssmarthost.net ~all",
+        "domain": "wealth-excel.com",
+        "detail": "Good policy (p=quarantine)."
+      },
+      "authority": {
+        "status": "moderate",
+        "label": "DA 11 \u00b7 Healthy standing",
+        "score": 11.0,
+        "page_authority": 49,
+        "linking_root_domains": 312,
+        "total_backlinks": 2741,
+        "spam_score": "2%",
+        "rank": null,
+        "domain": "wealth-excel.com",
+        "source": "moz_da",
+        "detail": "Moz DA 11/100 \u00b7 PA 49 \u00b7 Healthy standing. Linking roots: 312 \u00b7 Backlinks: 2741 \u00b7 Spam score 2%."
+      },
+      "issues": []
+    },
+    {
+      "name": "PreTax Wealth",
+      "url": "https://www.pretaxwealth.com",
+      "checked_at": "2026-07-29T23:54:48.213203+00:00",
+      "status": "healthy",
+      "http_status": 200,
+      "response_time_ms": 122,
+      "final_url": "https://www.pretaxwealth.com/",
+      "ssl": {
+        "valid": true,
+        "expires": "2026-09-15T01:55:16+00:00",
+        "days_left": 47
+      },
+      "malware": {
+        "status": "clean",
+        "label": "No Malware Detected",
+        "detail": "SSL valid and redirect looks normal. Add GOOGLE_SAFE_BROWSING_API_KEY for official malware scanning.",
+        "threats": [],
+        "redirect_safe": true,
+        "ssl_valid": true,
+        "source": "basic"
+      },
+      "dmarc": {
+        "status": "blank",
+        "label": "",
+        "policy": null,
+        "record": null,
+        "spf_present": false,
+        "spf_record": null,
+        "domain": "pretaxwealth.com",
+        "detail": ""
+      },
+      "authority": {
+        "status": "moderate",
+        "label": "DA 10 \u00b7 Healthy standing",
+        "score": 10.0,
+        "page_authority": 45,
+        "linking_root_domains": 278,
+        "total_backlinks": 2204,
+        "spam_score": "2%",
+        "rank": null,
+        "domain": "pretaxwealth.com",
+        "source": "moz_da",
+        "detail": "Moz DA 10/100 \u00b7 PA 45 \u00b7 Healthy standing. Linking roots: 278 \u00b7 Backlinks: 2204 \u00b7 Spam score 2%."
+      },
+      "issues": []
+    },
+    {
+      "name": "CGF 101",
+      "url": "https://www.cgf101.com",
+      "checked_at": "2026-07-29T23:54:48.552417+00:00",
+      "status": "healthy",
+      "http_status": 200,
+      "response_time_ms": 220,
+      "final_url": "https://cgf101.com/",
+      "ssl": {
+        "valid": true,
+        "expires": "2026-09-06T17:52:07+00:00",
+        "days_left": 38
+      },
+      "malware": {
+        "status": "clean",
+        "label": "No Malware Detected",
+        "detail": "SSL valid and redirect looks normal. Add GOOGLE_SAFE_BROWSING_API_KEY for official malware scanning.",
+        "threats": [],
+        "redirect_safe": true,
+        "ssl_valid": true,
+        "source": "basic"
+      },
+      "dmarc": {
+        "status": "blank",
+        "label": "",
+        "policy": null,
+        "record": null,
+        "spf_present": false,
+        "spf_record": null,
+        "domain": "cgf101.com",
+        "detail": ""
+      },
+      "authority": {
+        "status": "moderate",
+        "label": "DA 11 \u00b7 Healthy standing",
+        "score": 11.0,
+        "page_authority": 41,
+        "linking_root_domains": 193,
+        "total_backlinks": 1388,
+        "spam_score": "3%",
+        "rank": null,
+        "domain": "cgf101.com",
+        "source": "moz_da",
+        "detail": "Moz DA 11/100 \u00b7 PA 41 \u00b7 Healthy standing. Linking roots: 193 \u00b7 Backlinks: 1388 \u00b7 Spam score 3%."
+      },
+      "issues": []
+    },
+    {
+      "name": "Excel Tax",
+      "url": "https://www.exceltax.com",
+      "checked_at": "2026-07-29T23:54:48.884536+00:00",
+      "status": "healthy",
+      "http_status": 200,
+      "response_time_ms": 203,
+      "final_url": "https://exceltax.com/",
+      "ssl": {
+        "valid": true,
+        "expires": "2026-09-23T18:31:37+00:00",
+        "days_left": 55
+      },
+      "malware": {
+        "status": "clean",
+        "label": "No Malware Detected",
+        "detail": "SSL valid and redirect looks normal. Add GOOGLE_SAFE_BROWSING_API_KEY for official malware scanning.",
+        "threats": [],
+        "redirect_safe": true,
+        "ssl_valid": true,
+        "source": "basic"
+      },
+      "dmarc": {
+        "status": "pass",
+        "label": "DMARC Quarantine",
+        "policy": "quarantine",
+        "record": "v=DMARC1; p=quarantine; adkim=r; aspf=r; rua=mailto:dmarc_rua@onsecureserver.net;",
+        "spf_present": false,
+        "spf_record": null,
+        "domain": "exceltax.com",
+        "detail": "Good policy (p=quarantine). SPF record missing."
+      },
+      "authority": {
+        "status": "moderate",
+        "label": "DA 17 \u00b7 Healthy standing",
+        "score": 17.0,
+        "page_authority": 53,
+        "linking_root_domains": 447,
+        "total_backlinks": 4102,
+        "spam_score": "1%",
+        "rank": null,
+        "domain": "exceltax.com",
+        "source": "moz_da",
+        "detail": "Moz DA 17/100 \u00b7 PA 53 \u00b7 Healthy standing. Linking roots: 447 \u00b7 Backlinks: 4102 \u00b7 Spam score 1%."
+      },
+      "issues": []
+    }
+  ]
+}
