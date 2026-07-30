@@ -1,0 +1,34 @@
+{
+  "source": "Moz Domain Authority",
+  "report_date": "2026-07-28",
+  "domains": {
+    "wealth-excel.com": {
+      "da": 11,
+      "pa": 49,
+      "linking_root_domains": 312,
+      "total_backlinks": 2741,
+      "spam_score": "2%"
+    },
+    "pretaxwealth.com": {
+      "da": 10,
+      "pa": 45,
+      "linking_root_domains": 278,
+      "total_backlinks": 2204,
+      "spam_score": "2%"
+    },
+    "cgf101.com": {
+      "da": 11,
+      "pa": 41,
+      "linking_root_domains": 193,
+      "total_backlinks": 1388,
+      "spam_score": "3%"
+    },
+    "exceltax.com": {
+      "da": 17,
+      "pa": 53,
+      "linking_root_domains": 447,
+      "total_backlinks": 4102,
+      "spam_score": "1%"
+    }
+  }
+}

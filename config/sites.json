@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Wealth Excel",
+    "url": "https://www.wealth-excel.com",
+    "expected_status": [200, 301, 302, 303, 307, 308]
+  },
+  {
+    "name": "PreTax Wealth",
+    "url": "https://www.pretaxwealth.com",
+    "expected_status": [200, 301, 302, 303, 307, 308]
+  },
+  {
+    "name": "CGF 101",
+    "url": "https://www.cgf101.com",
+    "expected_status": [200, 301, 302, 303, 307, 308]
+  },
+  {
+    "name": "Excel Tax",
+    "url": "https://www.exceltax.com",
+    "expected_status": [200, 301, 302, 303, 307, 308]
+  }
+]
