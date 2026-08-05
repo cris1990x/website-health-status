@@ -116,7 +116,10 @@ def check_site(site: dict) -> dict:
             if malware["status"] == "warning":
                 result["issues"].append(malware["detail"])
 
-            if response.status_code not in expected:
+            # Treat any 2xx as OK (e.g. 202 from WAF/bot filters on datacenter IPs).
+            # Still accept configured redirects (3xx) via expected_status.
+            ok_status = response.status_code in expected or 200 <= response.status_code < 300
+            if not ok_status:
                 result["issues"].append(f"Unexpected HTTP status: {response.status_code}")
 
             if elapsed_ms > SLOW_THRESHOLD_MS:
