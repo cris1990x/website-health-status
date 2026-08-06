@@ -28,11 +28,15 @@ SITES_FILE = ROOT / "config" / "sites.json"
 RESULTS_DIR = ROOT / "results"
 DASHBOARD_DATA = ROOT / "dashboard" / "data.json"
 
-TIMEOUT_SECONDS = 15
+TIMEOUT_SECONDS = 20
 SLOW_THRESHOLD_MS = 3000
 SSL_WARNING_DAYS = 14
+HTTP_RETRIES = 3
 
-USER_AGENT = "WebsiteHealthMonitor/1.0 (read-only; +internal)"
+# Browser-like UA — some hosts/WAFs block custom bot user-agents from datacenter IPs.
+USER_AGENT = (
+    "Mozilla/5.0 (compatible; WebsiteHealthMonitor/1.1; +https://github.com/cris1990x/website-health-status)"
+)
 
 
 def load_sites() -> list[dict]:
@@ -93,15 +97,29 @@ def check_site(site: dict) -> dict:
         result["issues"].append(f"SSL expires in {ssl_info['days_left']} days")
 
     start = datetime.now(timezone.utc)
-    try:
-        response = requests.get(
-            url,
-            timeout=TIMEOUT_SECONDS,
-            allow_redirects=True,
-            headers={"User-Agent": USER_AGENT},
-        )
-        elapsed_ms = int((datetime.now(timezone.utc) - start).total_seconds() * 1000)
+    response = None
+    last_error = None
+    for attempt in range(1, HTTP_RETRIES + 1):
+        try:
+            response = requests.get(
+                url,
+                timeout=TIMEOUT_SECONDS,
+                allow_redirects=True,
+                headers={"User-Agent": USER_AGENT},
+            )
+            last_error = None
+            break
+        except (requests.Timeout, requests.ConnectionError) as exc:
+            last_error = exc
+            if attempt < HTTP_RETRIES:
+                continue
+        except Exception as exc:
+            last_error = exc
+            break
 
+    elapsed_ms = int((datetime.now(timezone.utc) - start).total_seconds() * 1000)
+
+    if response is not None:
         result["http_status"] = response.status_code
         result["response_time_ms"] = elapsed_ms
         result["final_url"] = response.url
@@ -125,21 +143,25 @@ def check_site(site: dict) -> dict:
             if elapsed_ms > SLOW_THRESHOLD_MS:
                 result["issues"].append(f"Slow response: {elapsed_ms}ms")
 
+            # If HTTPS page loaded successfully, drop SSL socket false-alarms from flaky networks.
+            if response.url.startswith("https://") and 200 <= response.status_code < 400:
+                result["issues"] = [
+                    i for i in result["issues"] if i != "SSL certificate invalid or unreachable"
+                ]
+                if result["ssl"] and not result["ssl"].get("valid"):
+                    result["ssl"] = {**result["ssl"], "valid": True, "note": "inferred from successful HTTPS response"}
+
             if result["issues"]:
                 result["status"] = "degraded" if response.status_code < 500 else "down"
             else:
                 result["status"] = "healthy"
-
-    except requests.Timeout:
-        result["issues"].append("Request timed out")
-        result["status"] = "down"
-        result["malware"] = analyze_malware(url, None, bool(ssl_info.get("valid")))
-    except requests.ConnectionError as exc:
-        result["issues"].append(f"Connection failed: {exc}")
-        result["status"] = "down"
-        result["malware"] = analyze_malware(url, None, bool(ssl_info.get("valid")))
-    except Exception as exc:
-        result["issues"].append(f"Check failed: {exc}")
+    else:
+        if isinstance(last_error, requests.Timeout):
+            result["issues"].append("Request timed out")
+        elif isinstance(last_error, requests.ConnectionError):
+            result["issues"].append(f"Connection failed: {last_error}")
+        else:
+            result["issues"].append(f"Check failed: {last_error}")
         result["status"] = "down"
         result["malware"] = analyze_malware(url, None, bool(ssl_info.get("valid")))
 
