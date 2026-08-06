@@ -33,10 +33,13 @@ SLOW_THRESHOLD_MS = 3000
 SSL_WARNING_DAYS = 14
 HTTP_RETRIES = 3
 
-# Browser-like UA — some hosts/WAFs block custom bot user-agents from datacenter IPs.
+# Real browser UA — some hosts/WAFs block custom bot strings, especially from datacenter IPs.
 USER_AGENT = (
-    "Mozilla/5.0 (compatible; WebsiteHealthMonitor/1.1; +https://github.com/cris1990x/website-health-status)"
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) "
+    "Chrome/124.0.0.0 Safari/537.36"
 )
+FALLBACK_USER_AGENT = "WebsiteHealthMonitor/1.0 (read-only; +internal)"
 
 
 def load_sites() -> list[dict]:
@@ -99,22 +102,31 @@ def check_site(site: dict) -> dict:
     start = datetime.now(timezone.utc)
     response = None
     last_error = None
-    for attempt in range(1, HTTP_RETRIES + 1):
-        try:
-            response = requests.get(
-                url,
-                timeout=TIMEOUT_SECONDS,
-                allow_redirects=True,
-                headers={"User-Agent": USER_AGENT},
-            )
-            last_error = None
-            break
-        except (requests.Timeout, requests.ConnectionError) as exc:
-            last_error = exc
-            if attempt < HTTP_RETRIES:
-                continue
-        except Exception as exc:
-            last_error = exc
+    agents = [USER_AGENT, FALLBACK_USER_AGENT]
+    for agent in agents:
+        for attempt in range(1, HTTP_RETRIES + 1):
+            try:
+                candidate = requests.get(
+                    url,
+                    timeout=TIMEOUT_SECONDS,
+                    allow_redirects=True,
+                    headers={"User-Agent": agent},
+                )
+                # Hosting WAF sometimes 403s bot/datacenter UAs while the site is fine for people.
+                if candidate.status_code == 403 and agent != agents[-1]:
+                    last_error = None
+                    break  # try next user-agent
+                response = candidate
+                last_error = None
+                break
+            except (requests.Timeout, requests.ConnectionError) as exc:
+                last_error = exc
+                if attempt < HTTP_RETRIES:
+                    continue
+            except Exception as exc:
+                last_error = exc
+                break
+        if response is not None:
             break
 
     elapsed_ms = int((datetime.now(timezone.utc) - start).total_seconds() * 1000)
