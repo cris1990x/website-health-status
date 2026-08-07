@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T22:00:58.420291+00:00",
+  "generated_at": "2026-08-07T12:43:01.243060+00:00",
   "summary": {
     "healthy": 4,
     "degraded": 0,
@@ -11,11 +11,11 @@
     {
       "name": "Wealth Excel",
       "url": "https://www.wealth-excel.com",
-      "checked_at": "2026-08-06T22:00:55.124850+00:00",
+      "checked_at": "2026-08-07T12:42:58.755651+00:00",
       "status": "healthy",
-      "http_status": 200,
-      "response_time_ms": 1402,
-      "final_url": "https://wealth-excel.com/",
+      "http_status": 202,
+      "response_time_ms": 301,
+      "final_url": "https://www.wealth-excel.com/",
       "ssl": {
         "valid": true,
         "expires": "2026-09-30T21:09:08+00:00",
@@ -58,15 +58,15 @@
     {
       "name": "PreTax Wealth",
       "url": "https://www.pretaxwealth.com",
-      "checked_at": "2026-08-06T22:00:56.879958+00:00",
+      "checked_at": "2026-08-07T12:42:59.482620+00:00",
       "status": "healthy",
       "http_status": 200,
-      "response_time_ms": 165,
+      "response_time_ms": 134,
       "final_url": "https://www.pretaxwealth.com/",
       "ssl": {
         "valid": true,
         "expires": "2026-09-15T01:55:16+00:00",
-        "days_left": 39
+        "days_left": 38
       },
       "malware": {
         "status": "clean",
@@ -105,10 +105,10 @@
     {
       "name": "CGF 101",
       "url": "https://www.cgf101.com",
-      "checked_at": "2026-08-06T22:00:57.356575+00:00",
+      "checked_at": "2026-08-07T12:43:00.082986+00:00",
       "status": "healthy",
       "http_status": 200,
-      "response_time_ms": 292,
+      "response_time_ms": 237,
       "final_url": "https://cgf101.com/",
       "ssl": {
         "valid": true,
@@ -152,10 +152,10 @@
     {
       "name": "Excel Tax",
       "url": "https://www.exceltax.com",
-      "checked_at": "2026-08-06T22:00:57.870064+00:00",
+      "checked_at": "2026-08-07T12:43:00.508985+00:00",
       "status": "healthy",
       "http_status": 200,
-      "response_time_ms": 285,
+      "response_time_ms": 268,
       "final_url": "https://exceltax.com/",
       "ssl": {
         "valid": true,
