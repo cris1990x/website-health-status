@@ -147,8 +147,14 @@ def check_site(site: dict) -> dict:
                 result["issues"].append(malware["detail"])
 
             # Treat any 2xx as OK (e.g. 202 from WAF/bot filters on datacenter IPs).
+            # 403 is also OK for status: hosts often forbid the probe (bot/datacenter IP)
+            # while the site is fine for real visitors — do not mark degraded.
             # Still accept configured redirects (3xx) via expected_status.
-            ok_status = response.status_code in expected or 200 <= response.status_code < 300
+            ok_status = (
+                response.status_code in expected
+                or 200 <= response.status_code < 300
+                or response.status_code == 403
+            )
             if not ok_status:
                 result["issues"].append(f"Unexpected HTTP status: {response.status_code}")
 
