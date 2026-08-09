@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-08T12:30:02.584458+00:00",
+  "generated_at": "2026-08-09T12:31:58.743805+00:00",
   "summary": {
     "healthy": 4,
     "degraded": 0,
@@ -11,15 +11,15 @@
     {
       "name": "Wealth Excel",
       "url": "https://www.wealth-excel.com",
-      "checked_at": "2026-08-08T12:29:59.461739+00:00",
+      "checked_at": "2026-08-09T12:31:54.489610+00:00",
       "status": "healthy",
-      "http_status": 202,
-      "response_time_ms": 298,
-      "final_url": "https://www.wealth-excel.com/",
+      "http_status": 200,
+      "response_time_ms": 2018,
+      "final_url": "https://wealth-excel.com/",
       "ssl": {
         "valid": true,
         "expires": "2026-09-30T21:09:08+00:00",
-        "days_left": 53
+        "days_left": 52
       },
       "malware": {
         "status": "clean",
@@ -58,15 +58,15 @@
     {
       "name": "PreTax Wealth",
       "url": "https://www.pretaxwealth.com",
-      "checked_at": "2026-08-08T12:30:00.413010+00:00",
+      "checked_at": "2026-08-09T12:31:56.912858+00:00",
       "status": "healthy",
       "http_status": 200,
-      "response_time_ms": 104,
+      "response_time_ms": 164,
       "final_url": "https://www.pretaxwealth.com/",
       "ssl": {
         "valid": true,
         "expires": "2026-09-15T01:55:16+00:00",
-        "days_left": 37
+        "days_left": 36
       },
       "malware": {
         "status": "clean",
@@ -105,15 +105,15 @@
     {
       "name": "CGF 101",
       "url": "https://www.cgf101.com",
-      "checked_at": "2026-08-08T12:30:00.958911+00:00",
+      "checked_at": "2026-08-09T12:31:57.460368+00:00",
       "status": "healthy",
       "http_status": 200,
-      "response_time_ms": 383,
+      "response_time_ms": 213,
       "final_url": "https://cgf101.com/",
       "ssl": {
         "valid": true,
         "expires": "2026-11-04T19:02:27+00:00",
-        "days_left": 88
+        "days_left": 87
       },
       "malware": {
         "status": "clean",
@@ -152,15 +152,15 @@
     {
       "name": "Excel Tax",
       "url": "https://www.exceltax.com",
-      "checked_at": "2026-08-08T12:30:01.877384+00:00",
+      "checked_at": "2026-08-09T12:31:58.106110+00:00",
       "status": "healthy",
       "http_status": 200,
-      "response_time_ms": 284,
+      "response_time_ms": 230,
       "final_url": "https://exceltax.com/",
       "ssl": {
         "valid": true,
         "expires": "2026-09-23T18:31:37+00:00",
-        "days_left": 46
+        "days_left": 45
       },
       "malware": {
         "status": "clean",
