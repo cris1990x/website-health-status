@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-13T12:53:06.522753+00:00",
+  "generated_at": "2026-08-14T12:47:13.825119+00:00",
   "summary": {
     "healthy": 3,
     "degraded": 0,
@@ -11,7 +11,7 @@
     {
       "name": "Wealth Excel",
       "url": "https://www.wealth-excel.com",
-      "checked_at": "2026-08-13T12:50:44.689448+00:00",
+      "checked_at": "2026-08-14T12:44:52.668002+00:00",
       "status": "down",
       "http_status": null,
       "response_time_ms": null,
@@ -62,15 +62,15 @@
     {
       "name": "PreTax Wealth",
       "url": "https://www.pretaxwealth.com",
-      "checked_at": "2026-08-13T12:53:05.374098+00:00",
+      "checked_at": "2026-08-14T12:47:13.157719+00:00",
       "status": "healthy",
       "http_status": 200,
-      "response_time_ms": 75,
+      "response_time_ms": 70,
       "final_url": "https://www.pretaxwealth.com/",
       "ssl": {
         "valid": true,
         "expires": "2026-09-15T01:55:16+00:00",
-        "days_left": 32
+        "days_left": 31
       },
       "malware": {
         "status": "clean",
@@ -109,15 +109,15 @@
     {
       "name": "CGF 101",
       "url": "https://www.cgf101.com",
-      "checked_at": "2026-08-13T12:53:05.560910+00:00",
+      "checked_at": "2026-08-14T12:47:13.364967+00:00",
       "status": "healthy",
       "http_status": 200,
-      "response_time_ms": 135,
+      "response_time_ms": 111,
       "final_url": "https://cgf101.com/",
       "ssl": {
         "valid": true,
         "expires": "2026-11-04T19:02:27+00:00",
-        "days_left": 83
+        "days_left": 82
       },
       "malware": {
         "status": "clean",
@@ -156,15 +156,15 @@
     {
       "name": "Excel Tax",
       "url": "https://www.exceltax.com",
-      "checked_at": "2026-08-13T12:53:05.788780+00:00",
+      "checked_at": "2026-08-14T12:47:13.560292+00:00",
       "status": "healthy",
       "http_status": 200,
-      "response_time_ms": 536,
+      "response_time_ms": 141,
       "final_url": "https://exceltax.com/",
       "ssl": {
         "valid": true,
         "expires": "2026-09-23T18:31:37+00:00",
-        "days_left": 41
+        "days_left": 40
       },
       "malware": {
         "status": "clean",
