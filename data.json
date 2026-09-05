@@ -1,34 +1,33 @@
 {
-  "generated_at": "2026-09-04T15:32:42.295219+00:00",
+  "generated_at": "2026-09-05T14:18:00.545333+00:00",
   "summary": {
-    "healthy": 3,
+    "healthy": 4,
     "degraded": 0,
-    "down": 1,
-    "malware_clean": 3,
+    "down": 0,
+    "malware_clean": 4,
     "malware_threats": 0
   },
   "sites": [
     {
       "name": "Wealth Excel",
       "url": "https://www.wealth-excel.com",
-      "checked_at": "2026-09-04T15:30:19.862599+00:00",
-      "status": "down",
-      "http_status": null,
-      "response_time_ms": null,
-      "final_url": null,
+      "checked_at": "2026-09-05T14:17:56.252420+00:00",
+      "status": "healthy",
+      "http_status": 200,
+      "response_time_ms": 2015,
+      "final_url": "https://wealth-excel.com/",
       "ssl": {
-        "valid": false,
-        "expires": null,
-        "days_left": null,
-        "error": "timed out"
+        "valid": true,
+        "expires": "2026-11-29T20:15:28+00:00",
+        "days_left": 85
       },
       "malware": {
-        "status": "warning",
-        "label": "Needs Review",
-        "detail": "SSL certificate invalid. Add GOOGLE_SAFE_BROWSING_API_KEY for a full malware scan.",
+        "status": "clean",
+        "label": "No Malware Detected",
+        "detail": "SSL valid and redirect looks normal. Add GOOGLE_SAFE_BROWSING_API_KEY for official malware scanning.",
         "threats": [],
         "redirect_safe": true,
-        "ssl_valid": false,
+        "ssl_valid": true,
         "source": "basic"
       },
       "dmarc": {
@@ -54,23 +53,20 @@
         "source": "moz_da",
         "detail": "Moz DA 11/100 \u00b7 PA 49 \u00b7 Healthy standing. Linking roots: 312 \u00b7 Backlinks: 2741 \u00b7 Spam score 2%."
       },
-      "issues": [
-        "SSL certificate invalid or unreachable",
-        "Request timed out"
-      ]
+      "issues": []
     },
     {
       "name": "PreTax Wealth",
       "url": "https://www.pretaxwealth.com",
-      "checked_at": "2026-09-04T15:32:40.776799+00:00",
+      "checked_at": "2026-09-05T14:17:58.790490+00:00",
       "status": "healthy",
       "http_status": 200,
-      "response_time_ms": 147,
+      "response_time_ms": 197,
       "final_url": "https://www.pretaxwealth.com/",
       "ssl": {
         "valid": true,
         "expires": "2026-11-13T04:20:33+00:00",
-        "days_left": 69
+        "days_left": 68
       },
       "malware": {
         "status": "clean",
@@ -109,15 +105,15 @@
     {
       "name": "CGF 101",
       "url": "https://www.cgf101.com",
-      "checked_at": "2026-09-04T15:32:41.027598+00:00",
+      "checked_at": "2026-09-05T14:17:59.356257+00:00",
       "status": "healthy",
       "http_status": 200,
-      "response_time_ms": 149,
+      "response_time_ms": 285,
       "final_url": "https://cgf101.com/",
       "ssl": {
         "valid": true,
         "expires": "2026-11-04T19:02:27+00:00",
-        "days_left": 61
+        "days_left": 60
       },
       "malware": {
         "status": "clean",
@@ -156,15 +152,15 @@
     {
       "name": "Excel Tax",
       "url": "https://www.exceltax.com",
-      "checked_at": "2026-09-04T15:32:41.448727+00:00",
+      "checked_at": "2026-09-05T14:17:59.960338+00:00",
       "status": "healthy",
       "http_status": 200,
-      "response_time_ms": 714,
+      "response_time_ms": 336,
       "final_url": "https://exceltax.com/",
       "ssl": {
         "valid": true,
         "expires": "2026-11-21T23:58:41+00:00",
-        "days_left": 78
+        "days_left": 77
       },
       "malware": {
         "status": "clean",
